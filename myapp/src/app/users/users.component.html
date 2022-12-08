@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <td *ngIf="userDetail"> {{userDetail.name}}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td *ngIf="userDetail"> {{userDetail.email}}</td>
+    </tr>
+    <tr>
+        <th>Contact</th>
+        <td *ngIf="userDetail"> {{userDetail.contact}}</td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td *ngIf="userDetail"> {{userDetail.address}}</td>
+    </tr>
+</table>
+<ul class="navbar-nav nav-tab">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" routerLink="useremail">click to get userMail</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>

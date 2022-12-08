@@ -1,0 +1,56 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "name": "Irfan H",
+            "email": "irfan@gmail.com",
+            "contact": 2345678,
+            "address": "Hombalagatti Harapanahalli"
+        },
+        {
+            "id": 2,
+            "name": "Imran",
+            "email": "imran@gmail.com",
+            "contact": 345679843,
+            "address": "Channai Crompete 1233"
+        },
+        {
+            "id": 3,
+            "name": "madhi",
+            "email": "madhi@gmail.com",
+            "contact": 1234556678,
+            "address": "Nichapura Harapanahalli 583127"
+        },
+        {
+            "id": 4,
+            "name": "Anand",
+            "email": "anand@gmail.com",
+            "contact": 3951543,
+            "address": " Harapanahalli 583131 "
+        },
+        {
+            "id": 5,
+            "name": "Darshan",
+            "email": "darshan@gmail.com",
+            "contact": 2345678,
+            "address": "Harapanahalli Davanagere"
+        },
+        {
+            "id": 6,
+            "name": "Sai Kiran",
+            "email": "saikiran@gmail.com",
+            "contact": 65432854,
+            "address": "Hospete Karnataka"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    }
+}

@@ -1,0 +1,68 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" id="form">
+    <h5 class="title">Form Array Example</h5>
+    <div class="form-group">
+
+        <input type="text" id="name" name="name" pInputText class="p-inputtext" placeholder="Name"
+            formControlName="name">
+    </div>
+    <div class="form-group">
+        <input type="text" name="email" pInputText class="p-inputtext" placeholder="E-mail" formControlName="email">
+        <div *ngIf="eventForm.controls['email'].hasError('required') && (eventForm.controls['email'].touched|| eventForm.controls['email'].dirty )"
+            class="alert alert-danger">
+            Enter the E-mail </div>
+        <div *ngIf="eventForm.controls['email'].hasError('pattern') && (eventForm.controls['email'].touched || eventForm.controls['email'].dirty)"
+            class="alert alert-danger">
+            Enter the valid E-mail
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <input type="password" name="Password" pInputText placeholder="Password" class="p-inputtext"
+            formControlName="password">
+        <div *ngIf="eventForm.controls['password'].hasError('required') && (eventForm.controls['password'].touched || eventForm.controls['password'].dirty )"
+            class="alert alert-danger">
+            Enter the password
+        </div>
+        <div *ngIf="eventForm.controls['password'].hasError('pattern') && (eventForm.controls['password'].touched || eventForm.controls['password'].dirty)"
+            class="alert alert-danger">
+            Enter the minimum 10 and maximum 30 charcters
+        </div>
+    </div>
+    <div class="border  mx-md-n5">
+        <label for="">Address:</label>
+        <div class="form-group">
+            <input type="text" name="email" pInputText class="p-inputtext" placeholder="">
+        </div>
+        <div class="form-group">
+
+            <input type="text" name="email" pInputText class="p-inputtext" placeholder="pincode">
+        </div>
+    </div>
+
+    <label for="">Add Address</label>
+
+    <div formArrayName="address">
+        <div *ngFor="let addres of address.controls; let i=index">
+            <div [formGroupName]="i" *ngIf="i < 1">
+                <!-- {{i}} -->
+                <div class="form-group">
+
+                    <input type="text" pInputText class="p-inputtext" formControlName="address" placeholder="">
+                </div>
+                <div class="form-group">
+
+                    <input type="text" pInputText class="p-inputtext" formControlName="pincode" placeholder="pincode">
+                </div>
+                <button (click)="removeAddress(i)" pButton pRipple class="p-button-danger">Remove</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" (click)="addAddress() " class="p-button-secondary" pButton pRipple>Add</button>
+    </div>
+    <div>
+        <button type="submit" pButton pRipple>Submit</button>
+    </div>
+</form>

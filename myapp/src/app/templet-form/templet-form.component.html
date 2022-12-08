@@ -1,0 +1,52 @@
+<form class="mt-5" #FormControl="ngForm" (submit)="handleSubmit()">
+    <div class="mt-5">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="userData.name" #name="ngModel"
+                [ngModelOptions]="{standalone: true}" pattern="^[a-zA-Z\s]*$" maxlength="10">
+            <label for="float-input">Candidate Name</label>
+        </span>
+        <div *ngIf="(name.touched || name.dirty ||FormControl.submitted) && (name.invalid)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']">
+                name is required
+            </div>
+            <div *ngIf="name.errors?.['pattern']">
+                Please Enter Valide Name
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="userData.address" #address="ngModel"
+                [ngModelOptions]="{standalone: true}" required minlength="10" maxlength="100">
+            <label for="float-input">Address</label>
+        </span>
+        <div *ngIf="(address.touched || address.dirty ||FormControl.submitted ) && address.invalid">
+            <div *ngIf="address.errors?.['required']"> address is required </div>
+
+        </div>
+    </div>
+    <div class="mt-4">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="userData.email" #email="ngModel"
+                [ngModelOptions]="{standalone: true}" required  pattern="[a-z0-9-.]+@(?=.*htcindia)([a-z])+\.[a-z]{2,3}$" >
+            <label for="float-input">Email</label>
+        </span>
+        <div>
+
+        </div>
+    </div>
+    <div class="mt-4">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="userData.contact" #contact="ngModel"
+                [ngModelOptions]="{standalone: true}" required pattern="^[0-9]$" maxlength="10">
+            <label for="float-input">Contact</label>
+        </span>
+        <div>
+
+        </div>
+    </div>
+    <div class="mt-4">
+        <button pButton type="button" label="Submitt" class="p-button-sm" FormControl.valide disabled></button>
+        <button pButton type="button" label="Reset" class="p-button-sm p-button-warning mx-2"></button>
+    </div>
+</form>
